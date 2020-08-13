@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace TestTask.Source.Class
 {
+    /// <summary>
+    /// Вспомогательный класс для формы создания активов
+    /// Содержит все типы конкретных активов
+    /// </summary>
     static public class AssetsFactory
     {
+        //Массив со всеми определенными типами активов
+        //Используется в выпадающем меню в форме AddForm при создании активов
         static public string[] AssetsType =
         {
             "Счёт в банке",

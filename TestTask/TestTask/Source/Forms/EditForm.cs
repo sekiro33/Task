@@ -21,6 +21,8 @@ namespace TestTask
             InitializeComponent();
             currentAssets = assets;
             currentAssets.EditForm(AssetsFieldsData);
+            AssetsFieldsData.AllowUserToDeleteRows = false;
+            AssetsFieldsData.AllowUserToAddRows = false;
         }
 
         private void AcceptButton_Click(object sender, EventArgs e)

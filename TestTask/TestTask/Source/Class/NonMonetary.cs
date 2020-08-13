@@ -7,10 +7,22 @@ using System.Windows.Forms;
 
 namespace TestTask.Source.Class
 {
+    /// <summary>
+    /// Класс определяющий неденежные активы
+    /// </summary>
     class NonMonetary : Assets
     {
+        /// <summary>
+        /// Начальная  балансовая стоимость
+        /// </summary>
         public int FirstValue { get; set; }
+        /// <summary>
+        /// Остаточная балансовая стоимость
+        /// </summary>
         public int SecondValue { get; set; }
+        /// <summary>
+        /// Оценочная стоимость
+        /// </summary>
         public int ThirdValue { get; set; }
 
         //списки для дополнительных параметров (названия + значения)

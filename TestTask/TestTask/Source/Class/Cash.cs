@@ -7,8 +7,14 @@ using System.Windows.Forms;
 
 namespace TestTask.Source.Class
 {
+    /// <summary>
+    /// Класс определяющий актив типа "В кассе"
+    /// </summary>
     class Cash : Monetary
     {
+        /// <summary>
+        /// В чём хранится 
+        /// </summary>
         public string Value { get; set; }
 
         public override void EditForm(DataGridView data)

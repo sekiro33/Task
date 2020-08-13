@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using TestTask.Source.Class;
 
 namespace TestTask
@@ -22,6 +21,8 @@ namespace TestTask
             InitializeComponent();
             listBox = assets;
             AssetsTypeMenu.Items.AddRange(AssetsFactory.AssetsType);
+            AssetsFieldsData.AllowUserToDeleteRows = false;
+            AssetsFieldsData.AllowUserToAddRows = false;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -41,14 +42,17 @@ namespace TestTask
 
             if (result == DialogResult.Yes)
             {
+                //выполняем проверку на пустые поля в таблице
                 if (CheckFields() == null)
                 {
+                    //если всё ОК, то сохраняем актив
                     currentAssets.SaveForm(AssetsFieldsData);
                     listBox.Items.Add(currentAssets);
                     this.Close();
                 }
                 else
                 {
+                    //если нет, выделяем пустую ячейку и сообщаем о ней
                     var cell = CheckFields();
                     int row = cell.Item1;
                     int column = cell.Item2;
